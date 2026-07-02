@@ -31,7 +31,7 @@ env:
     - cmr_BUILD_TESTING=ON
 
     - cmr_WORK_DIR=${HOME}
-    - cmr_REPO_DIR=${HOME}/build/LibCMaker/LibCMaker_${cmr_LIB_NAME}
+    - cmr_REPO_DIR=${HOME}/build/LibCMaker/${cmr_LIB_NAME}_LibCMaker
     - cmr_SAMPLE_SRC_DIR=${cmr_REPO_DIR}/samples/TestCompileWith${cmr_LIB_NAME}
     - cmr_SAMPLE_DIR=${cmr_WORK_DIR}/TestCompileWith${cmr_LIB_NAME}
     - cmr_SAMPLE_LIB_DIR=${cmr_SAMPLE_DIR}/libs
@@ -793,13 +793,13 @@ jobs:
         - cd ${TRAVIS_BUILD_DIR}
 
         # NOTE: LibCMaker lib triggers.
-        - ./trigger.sh LibCMaker LibCMaker_AGG              master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_Dirent           master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_Expat            master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_HarfBuzz         master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_ICU              master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_STLCache         master $TRAVIS_ACCESS_TOKEN
-        - ./trigger.sh LibCMaker LibCMaker_wxWidgets        master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker AGG_LibCMaker              master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker Dirent_LibCMaker           master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker Expat_LibCMaker            master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker HarfBuzz_LibCMaker         master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker ICU_LibCMaker              master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker STLCache_LibCMaker         master $TRAVIS_ACCESS_TOKEN
+        - ./trigger.sh LibCMaker wxWidgets_LibCMaker        master $TRAVIS_ACCESS_TOKEN
 
 
 notifications:

@@ -198,7 +198,7 @@ matrix:
 #      cmr_MSVC_2015_x64_shared: ON
 
 
-clone_folder: c:\projects\LibCMaker_${cmr_LIB_NAME}
+clone_folder: c:\projects\${cmr_LIB_NAME}_LibCMaker
 
 
 before_build:
@@ -206,7 +206,7 @@ before_build:
   - ps: $env:PATH = $env:PATH -replace "C:\\Program Files\\Git\\usr\\bin",""
 #  - set
   - xcopy %cmr_SAMPLE_SRC_DIR% %cmr_SAMPLE_DIR% /e /i /h /q
-  - xcopy %cmr_REPO_DIR% %cmr_SAMPLE_LIB_DIR%\LibCMaker_%cmr_LIB_NAME% /e /i /h /q
+  - xcopy %cmr_REPO_DIR% %cmr_SAMPLE_LIB_DIR%\%cmr_LIB_NAME%_LibCMaker /e /i /h /q
 
   - mkdir %cmr_BUILD_DIR%
   - mkdir %cmr_INSTALL_DIR%

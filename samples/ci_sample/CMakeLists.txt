@@ -31,7 +31,7 @@ cmake_minimum_required(VERSION ${cmr_CMAKE_MIN_VER})
 include("${LibCMaker_DIR}/samples/cmr_samples_common_macros.cmake")
 cmr_common_sample_part__before_project()
 
-project(LibCMaker_GoogleTest_Compile_Test CXX)
+project(GoogleTest_LibCMaker_Compile_Test CXX)
 
 cmr_common_sample_part__project_settings()
 

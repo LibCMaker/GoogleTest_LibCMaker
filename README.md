@@ -1,4 +1,4 @@
-# LibCMaker_GoogleTest
+# GoogleTest_LibCMaker
 
 The CMake build scripts for the Google Test library building with CMake.
 
