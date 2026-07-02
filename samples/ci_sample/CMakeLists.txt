@@ -35,17 +35,12 @@ project(GoogleTest_LibCMaker_Compile_Test CXX)
 
 cmr_common_sample_part__project_settings()
 
-
-#-----------------------------------------------------------------------
-# Common sample part
-#-----------------------------------------------------------------------
-
 # Used only for executables.
 #cmr_common_sample_part__add_executable()
 
 
 #-----------------------------------------------------------------------
-# Download, configure, build, install and find the required libraries
+# Unpack, configure, build and find the required libraries
 #-----------------------------------------------------------------------
 
 # Google Test lib is working in `cmr_common_sample_part__project_settings()`.
@@ -61,10 +56,9 @@ add_library(${PROJECT_NAME}
     ${example_src_DIR}/sample1.h
     ${example_src_DIR}/sample1.cc
 )
-set_target_properties(${PROJECT_NAME} PROPERTIES
-  CXX_STANDARD 11
-  C_STANDARD 11
-)
+
+cmr_common_sample_part__set_cxx_c_standards()
+
 if(BUILD_SHARED_LIBS AND WIN32 AND NOT MINGW)
   target_compile_definitions(${PROJECT_NAME}
     PRIVATE
@@ -76,5 +70,4 @@ endif()
 # Testing
 #-----------------------------------------------------------------------
 
-set(test_src_DIR "${CMAKE_CURRENT_LIST_DIR}/src")
-add_subdirectory(test)
+cmr_common_test_part__add_subdirectory_test()

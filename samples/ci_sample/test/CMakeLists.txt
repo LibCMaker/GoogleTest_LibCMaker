@@ -34,14 +34,11 @@ if(BUILD_TESTING)
   cmr_common_test_part__android__run_test()
   cmr_common_test_part__ios()
   cmr_common_test_part__set_common_tests_properties()
+  cmr_common_test_part__set_cxx_c_standards()
 
   target_sources(${test_NAME}
     PRIVATE
       ${test_src_DIR}/sample1_unittest.cc
-  )
-  set_target_properties(${test_NAME} PROPERTIES
-    CXX_STANDARD 11
-    C_STANDARD 11
   )
 
   # Our lib for testing.
@@ -52,21 +49,18 @@ endif()
 
 
 #-----------------------------------------------------------------------
-# FailTest
+# Fail test
 #-----------------------------------------------------------------------
 
 if(BUILD_TESTING AND NOT ANDROID AND NOT IOS)
-  set(test_NAME "FailTest")
+  set(test_NAME "fail_test_example")
 
   cmr_common_test_part__add_executable()
+  cmr_common_test_part__set_cxx_c_standards()
 
   target_sources(${test_NAME}
     PRIVATE
       ${test_src_DIR}/fail-test.cpp
-  )
-  set_target_properties(${test_NAME} PROPERTIES
-    CXX_STANDARD 11
-    C_STANDARD 11
   )
 
   set_tests_properties(${test_NAME} PROPERTIES
